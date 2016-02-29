@@ -15,6 +15,7 @@
 		0CF151D81C83ED41000CB1EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CF151D61C83ED41000CB1EA /* LaunchScreen.storyboard */; };
 		0CF151E31C83ED41000CB1EA /* weibaoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF151E21C83ED41000CB1EA /* weibaoAppTests.m */; };
 		0CF151EE1C83ED41000CB1EA /* weibaoAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF151ED1C83ED41000CB1EA /* weibaoAppUITests.m */; };
+		AC4CDDBF0C17F23C8A33B737 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A30F316E4728F6D81A94F69 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		0CF151E91C83ED41000CB1EA /* weibaoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weibaoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CF151ED1C83ED41000CB1EA /* weibaoAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weibaoAppUITests.m; sourceTree = "<group>"; };
 		0CF151EF1C83ED41000CB1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A30F316E4728F6D81A94F69 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C37CDB8BE0C34B27AC689858 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F3C939258C2327421488F011 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4CDDBF0C17F23C8A33B737 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				0CF151E11C83ED41000CB1EA /* weibaoAppTests */,
 				0CF151EC1C83ED41000CB1EA /* weibaoAppUITests */,
 				0CF151C61C83ED41000CB1EA /* Products */,
+				B63C33F0A4CB2BF74D36116D /* Pods */,
+				8938D96581CA071C71F8F055 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +147,23 @@
 			path = weibaoAppUITests;
 			sourceTree = "<group>";
 		};
+		8938D96581CA071C71F8F055 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A30F316E4728F6D81A94F69 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B63C33F0A4CB2BF74D36116D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C37CDB8BE0C34B27AC689858 /* Pods.debug.xcconfig */,
+				F3C939258C2327421488F011 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CF151F21C83ED41000CB1EA /* Build configuration list for PBXNativeTarget "weibaoApp" */;
 			buildPhases = (
+				8BCD394F81FB581E795B747F /* Check Pods Manifest.lock */,
 				0CF151C11C83ED41000CB1EA /* Sources */,
 				0CF151C21C83ED41000CB1EA /* Frameworks */,
 				0CF151C31C83ED41000CB1EA /* Resources */,
+				595A21C6B834FA45A93458F9 /* Embed Pods Frameworks */,
+				F532DB13B28F142B879026D1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +294,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		595A21C6B834FA45A93458F9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BCD394F81FB581E795B747F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F532DB13B28F142B879026D1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0CF151C11C83ED41000CB1EA /* Sources */ = {
@@ -412,6 +487,7 @@
 		};
 		0CF151F31C83ED41000CB1EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C37CDB8BE0C34B27AC689858 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = weibaoApp/Info.plist;
@@ -423,6 +499,7 @@
 		};
 		0CF151F41C83ED41000CB1EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3C939258C2327421488F011 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = weibaoApp/Info.plist;
@@ -499,6 +576,7 @@
 				0CF151F41C83ED41000CB1EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CF151F51C83ED41000CB1EA /* Build configuration list for PBXNativeTarget "weibaoAppTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +585,7 @@
 				0CF151F71C83ED41000CB1EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CF151F81C83ED41000CB1EA /* Build configuration list for PBXNativeTarget "weibaoAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +594,7 @@
 				0CF151FA1C83ED41000CB1EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
