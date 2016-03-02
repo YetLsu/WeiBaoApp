@@ -1,0 +1,48 @@
+//
+//  weibaoApp.pch
+//  weibaoApp
+//
+//  Created by 刘毕涛 on 16/2/29.
+//  Copyright © 2016年 浙江蚁窝投资管理有限公司. All rights reserved.
+//
+
+#ifndef weibaoApp_pch
+#define weibaoApp_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define APIKey      @"85d38c1e3463fe1af635600247235ae9"
+
+
+#define KscreenWidth   [UIScreen mainScreen].bounds.size.width
+#define KscreenHeight   [UIScreen mainScreen].bounds.size.height
+
+#define KthemeColor         [UIColor colorWithRed:23/255.0 green:122/255.0 blue:33/255.0 alpha:1];
+
+#define KviewColor          [UIColor colorWithRed:235.0/255 green:235.0/255 blue:243.0/255 alpha:1.0]
+
+#define KurlString              @"http://weixin.zjctauto.com/API_ch/newpower/index.php"
+#define Kmap_url                @"http://weixin.zjctauto.com/API_ch/newpower/getMap.php"
+#define KurlPhoto                 @"http://weixin.zjctauto.com"
+
+#define Kregister                                   @"doReg"
+#define KgetCode                                    @"getCode"
+#define Klogin                                      @"doLogin"
+#define KeditPwd                                    @"editPWD"
+#define KsKey                                         @"549f9141102c15f80532e224c8373c1d"
+#define KsendMSg                                    @"sendMsg"
+#define KsaveFile                                   @"saveFile"
+#define KeditMem                                    @"editMem"
+#define Kget_mapPos                                 @"get_mapPos"
+
+#define  KuserID             @"userID"
+#define  KuserPhone          @"userPhone"
+#define  KuserName           @"userName"
+#define  Kuserimg             @"userimage"
+#define  KuserMemo             @"userMemo"
+#define  KuserSex              @"userSex"
+#define  KuserBrithday          @"userBrithday"
+
+#define  Karray                @"array"
+
+#endif /* weibaoApp_pch */
