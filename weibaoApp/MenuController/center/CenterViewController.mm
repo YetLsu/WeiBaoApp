@@ -60,7 +60,7 @@
     _mapView.delegate = self;
     //实现定位功能
     _mapView.showsUserLocation = YES;
-    _mapView.userLocation.title = nil;
+//    _mapView.userLocation.title = @"wo de";
     
     //变化比例尺的位置
     _mapView.scaleOrigin = CGPointMake(20, KscreenHeight-40);
@@ -279,15 +279,18 @@
     return nil;
 }
 
-- (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views
-{
-    MAAnnotationView *view = views[0];
-    // 放到该方法中用以保证userlocation的annotationView已经添加到地图上了。
-    if ([view.annotation isKindOfClass:[MAUserLocation class]])
-    {
-        view.canShowCallout = NO;
-    }
-}
+//- (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views
+//{
+//        MAAnnotationView *view;
+//    if ([Utils isNull:views]) {
+//        view = views[0];
+//    }
+//    // 放到该方法中用以保证userlocation的annotationView已经添加到地图上了。
+//    if ([view.annotation isKindOfClass:[MAUserLocation class]])
+//    {
+//        view.canShowCallout = NO;
+//    }
+//}
 
 - (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
 {
@@ -296,7 +299,12 @@
 }
 //点击气泡
 - (void)mapView:(MAMapView *)mapView didAnnotationViewCalloutTapped:(MAAnnotationView *)view;{
+    if ([view.annotation isKindOfClass:[MAUserLocation class]])
+    {
+        return;
+    }
     CustomAnnotation *ann = (CustomAnnotation *)view.annotation;
+   
     DetailedViewController *detailedVC = [[DetailedViewController alloc]initWithStore:ann];
     [self.navigationController pushViewController:detailedVC animated:YES];
 }

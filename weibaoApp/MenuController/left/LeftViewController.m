@@ -151,9 +151,7 @@
     
     UINavigationController *nav = (UINavigationController *)self.mm_drawerController.centerViewController;
     __weak CenterViewController *centerVC = (CenterViewController *)nav.childViewControllers[0];
-    
-   
-    
+
     if ([Config getOwnID]) {
         switch (indexPath.row) {
             case 1:{
@@ -183,12 +181,20 @@
             }
                 break;
             case 5:{
-                [Config clearProfile];
-                _hudView = [Utils createHUD];
-                _hudView.userInteractionEnabled = NO;
-                [_hudView hide:YES afterDelay:1];
-                _hudView.labelText = @"注销成功";
-                [self refresh];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"注销" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认注销" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    [Config clearProfile];
+                    _hudView = [Utils createHUD];
+                    _hudView.userInteractionEnabled = NO;
+                    [_hudView hide:YES afterDelay:1];
+                    _hudView.labelText = @"注销成功";
+                    [self refresh];
+                }];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+                [alertController addAction:action1];
+                [alertController addAction:cancelAction];
+                
+                [self presentViewController:alertController animated:NO completion:nil];
             }
                 break;
             case 6:{
